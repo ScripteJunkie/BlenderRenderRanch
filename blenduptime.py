@@ -1,8 +1,16 @@
 from flask import Flask
 import renderexecute as re
 import sessionkeygenerator as sk
+import platform
 
-UPLOAD_FOLDER = 'C:/BlenderRenderRanch/RenderBarn/'
+UPLOAD_FOLDER = ''
+filename = ''
+
+if (platform.system() == "Linux"):
+    UPLOAD_FOLDER = "/home/machine01/BlenderRenderRanch/RenderBarn/"
+else:
+    UPLOAD_FOLDER = "C:/BlenderRenderRanch/RenderBarn/"
+
 
 app = Flask(__name__)
 app.secret_key = "secret key"
@@ -12,6 +20,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 import os
 #import magic
 import urllib.request
+#from urllib import request
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 
