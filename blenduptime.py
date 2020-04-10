@@ -60,7 +60,8 @@ def upload_file():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='192.168.2.155')
+    #app.run()
 
 #@app.route('/')
 #def home():

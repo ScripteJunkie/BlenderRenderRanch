@@ -10,7 +10,7 @@ if (platform.system() == "Linux"):
     folder = "/home/machine01/BlenderRenderRanch/RenderBarn/"
 else:
     folder = "C:/BlenderRenderRanch/RenderBarn/"
-    
+
 folderout = ""
 
 if (platform.system() == "Linux"):
@@ -37,6 +37,3 @@ def render():
         os.system("./blender -b " + folder + sname + ".blend" + " -o " + folderout + " -f 1")
     else:
         os.system("blender.exe -b " + folder + sname + ".blend" + " -o " + folderout + " -f 1")
-    
-    
-    
